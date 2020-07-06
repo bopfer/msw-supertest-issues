@@ -1,0 +1,13 @@
+#!/bin/sh
+
+##
+ # This should be run from the root of this package via: yarn gqlCodegen
+ #
+ # Running it directly may not resolve paths properly.
+##
+
+GQL_GEN_BIN=`yarn bin gql-gen`
+GQL_FILE="graphql.codegen.yml"
+
+echo "--> Running the Codegen..."
+eval "$GQL_GEN_BIN -c $GQL_FILE"

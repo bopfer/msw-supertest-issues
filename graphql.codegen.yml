@@ -1,0 +1,27 @@
+##
+# Generate resolver typings for the GraphQL server.
+# To regenerate, run: yarn gqlCodegen
+##
+
+# All schemas use the same plugins defined here, then used below in each section.
+plugins: &plugins
+  - add: '/* eslint-disable */'
+  - add: '/* istanbul ignore file */'
+  - add: "// @ts-nocheck\n"
+  - add: "/**\n * THIS FILE IS AUTO-GENERATED. DO NOT EDIT!\n * Run: `yarn gqlCodegen` to regenerate.\n */\n"
+  - typescript
+  - typescript-resolvers
+
+overwrite: true
+config:
+  maybeValue: T | undefined
+  useIndexSignature: true
+  enumsAsTypes: true
+  scalars:
+    Date: Date
+generates:
+  ./src/graphql/generatedTypes.ts:
+    schema: ./src/graphql/schema.ts
+    plugins: *plugins
+require:
+  - ts-node/register
