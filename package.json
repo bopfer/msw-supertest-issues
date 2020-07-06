@@ -1,0 +1,8 @@
+{
+  "name": "msw-supertest-issues",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:bopfer/msw-supertest-issues.git",
+  "author": "Bryan Opfer <824368+bopfer@users.noreply.github.com>",
+  "license": "MIT"
+}
