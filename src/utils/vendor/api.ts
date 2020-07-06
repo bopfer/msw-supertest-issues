@@ -9,11 +9,7 @@ const headers = {
 };
 
 const sitesCreated = async () => {
-  const response = await fetch(`${API_BASE_URL}/created`, { headers }).catch((error) => {
-    throw error;
-  });
-
-  console.log(response);
+  const response = await fetch(`${API_BASE_URL}/created`, { headers });
 
   if (response.ok) {
     const json = (await response.json()) as string[];
